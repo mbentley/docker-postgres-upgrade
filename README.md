@@ -15,9 +15,31 @@ docker run -it --rm \
 
 ## Building the image
 
+Check to make sure the version you're trying to upgrade from is available in the [Alpine packages](https://pkgs.alpinelinux.org/packages?name=postgresql1%3F&branch=v3.20&repo=&arch=x86_64&maintainer=). Here are a few examples:
+
+### 15 to 16:
+
 ```bash
 docker build --pull \
   --build-arg OLDVER=15 \
   --build-arg NEWVER=16 \
   -t mbentley/postgres-upgrade:15-to-16 .
+```
+
+### 14 to 15:
+
+```bash
+docker build --pull \
+  --build-arg OLDVER=14 \
+  --build-arg NEWVER=15 \
+  -t mbentley/postgres-upgrade:14-to-15 .
+```
+
+### 14 to 16:
+
+```bash
+docker build --pull \
+  --build-arg OLDVER=14 \
+  --build-arg NEWVER=16 \
+  -t mbentley/postgres-upgrade:14-to-16 .
 ```
